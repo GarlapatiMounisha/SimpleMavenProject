@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'hello world'
+            }
+         }
+	 stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
+	stage('Sonar Analysis') {
+            steps {
+                echo 'Sonar scann'
+	   }
+        }
+	stage('Artifactory') {
+            steps {
+                echo 'upload artifacts to Artifactory'
+	    }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
+            }
+        }
+    }
+}	
